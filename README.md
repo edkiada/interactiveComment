@@ -26,15 +26,15 @@ Users should be able to:
 ### Screenshot
 
 #### Desktop Version
-![Desktop Screenshot](./screenShot/desktop.jpg)
+![Desktop Screenshot](.public/screenShot/desktop.jpg)
 
 #### Mobile Version
-![Mobile Screenshot](./screenShot/mobile.jpg)
+![Mobile Screenshot](.public./screenShot/mobile.jpg)
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/edkiada/E-commerceProduct)
-- Live Site URL: [Countries App](https://edkiada.github.io/E-commerceProduct/)
+- Solution URL: [GitHub](https://github.com/edkiada/interactiveComment)
+- Live Site URL: [Countries App](https://edkiada.github.io/interactiveComment/)
 
 ## My process
 
