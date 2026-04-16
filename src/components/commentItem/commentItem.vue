@@ -22,6 +22,7 @@
   const vote = ref("");
   const breakpoints = useBreakpoints(breakpointsTailwind);
   const isDesktop = breakpoints.greater('lg');
+  const doubleCheck = ref(false);
 
   const openReplyInput = () => {
     isReplying.value = true;
@@ -70,6 +71,10 @@
       vote.value = "";
     }
   }
+
+  const hoggleDoubleCheck = () => {
+    doubleCheck.value = !doubleCheck.value;
+  }
 </script>
 <template>
   <section class="container" v-if="isDesktop">
@@ -88,7 +93,7 @@
         </div>
         <div>
           <div v-if="currentUser.username === comment.user.username && !editMode" class="editDeleteBtn">
-            <button type="button" class="miniBtn" @click="deleteComment">
+            <button type="button" class="miniBtn" @click="hoggleDoubleCheck">
               <img :src="deleteIcon" alt="deleteIcon" class="miniIcon">
               <span class="deleteSpan">Delete</span>
             </button>
@@ -132,7 +137,7 @@
         <button type="button" class="interactionBtn" @click="downvote"><img :src="minus" alt="minusIcon"></button>
       </div>
       <div v-if="currentUser.username === comment.user.username && !editMode" class="editDeleteBtn">
-        <button type="button" class="miniBtn" @click="deleteComment">
+        <button type="button" class="miniBtn" @click="hoggleDoubleCheck">
           <img :src="deleteIcon" alt="deleteIcon" class="miniIcon">
           <span class="deleteSpan">Delete</span>
         </button>
@@ -158,7 +163,7 @@
       <textarea name="reply" id="reply" class="replyInput" v-model="replyContent">{{ replyContent }} </textarea>
       <div class="controlBtn">
         <button type="button" class="replyBtn" @click="submitReply(); closeReplyInput()">REPLY</button>
-        <button type="button" class="replyBtn replyCancelBtn" @click="closeReplyInput">CANCEL</button>
+        <button type="button" class="replyBtn redBtn" @click="closeReplyInput">CANCEL</button>
       </div>
     </div>
   </section>
@@ -172,6 +177,18 @@
       :parentArray="comment.replies"
     />
   </div>
+  <Teleport to="#app">
+    <div class="doubleCheck" v-if="doubleCheck">
+      <div class="doubleCheckContent">
+        <h3>Delete comment</h3>
+        <p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+        <div class="doubleCheckBtn">
+          <button type="button" class="checkBtn" @click="hoggleDoubleCheck">NO, CANCEL</button>
+          <button type="button" class="checkBtn redBtn" @click="deleteComment">YES, DELETE</button>
+        </div>
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <style scoped>
