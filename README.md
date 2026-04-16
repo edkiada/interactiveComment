@@ -29,7 +29,7 @@ Users should be able to:
 ![Desktop Screenshot](./public/screenShot/desktop.jpg)
 
 #### Mobile Version
-![Mobile Screenshot](./public./screenShot/mobile.jpg)
+![Mobile Screenshot](./public/screenShot/mobile.jpg)
 
 ### Links
 
