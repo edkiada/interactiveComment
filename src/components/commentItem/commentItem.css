@@ -1,0 +1,195 @@
+.container {
+  background-color: var(--White);
+  width: 90%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.userImage {
+  width: 10%;
+}
+
+.content {
+  color: var(--Grey500);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.interaction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.likeBtn {
+  display: flex;
+  background-color: var(--Grey100);
+  border-radius: 0.6rem;
+}
+
+.interactionBtn {
+  background-color: var(--Grey100);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.6rem;
+}
+
+.likeNum {
+  color: var(--Purple600);
+  padding: 0.4rem 0.6rem;
+  font-weight: 500;
+}
+
+.miniBtn {
+  background-color: var(--White);
+  border: none;
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.miniBtn > span {
+  color: var(--Purple600);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.replies-wrapper {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  margin-left: 5%;
+  border-left: 2px solid var(--Grey100);
+}
+
+.replyInputWrapper {
+  width: 100%;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.replyTo {
+  color: var(--Purple600);
+  font-weight: 500;
+}
+
+.mainUserMark {
+  background-color: var(--Purple600);
+  color: var(--White);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+}
+
+.editDeleteBtn {
+  display: flex;
+}
+
+.miniBtn > .deleteSpan {
+  color: var(--Pink400);
+}
+
+.replyInput {
+  padding: 0.8rem;
+  border: 1px solid var(--Grey500);
+  resize: none;
+  border-radius: 0.4rem;
+  width: 100%;
+}
+
+.replyInput:focus {
+  outline: none;
+  border: 1px solid var(--Purple600);
+}
+
+.replyBtn {
+  background-color: var(--Purple600);
+  color: var(--White);
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.4rem;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.replyCancelBtn {
+  background-color: var(--Pink400);
+}
+
+.controlBtn {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.replyUserImage {
+  width: clamp(2rem, 10%, 3rem);
+  align-self: flex-start;
+}
+
+@media (min-width: 1025px) {
+  .container {
+    width: 60%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .mainContent {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mainContentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .likeBtn {
+    flex-direction: column;
+    justify-content: center;
+    height: 6rem;
+    padding: 0.4rem;
+  }
+  .replyInput {
+    width: clamp(25rem, 44vw, 42rem);
+    height: 4rem;
+  }
+  .interaction {
+    display: flex;
+    justify-content: end;
+  }
+  .replies-wrapper {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    margin-left: 5%;
+    border-left: none;
+    position: relative;
+  }
+  .replies-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 15%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--Grey100);
+  }
+}

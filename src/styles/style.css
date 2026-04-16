@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Manrope:wght@200..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Story+Script&display=swap');
+
+:root {
+  /* Primary */
+  --Purple600: hsl(238, 40%, 52%);
+  --Pink400: hsl(358, 79%, 66%);
+  --Purple200: hsl(239, 57%, 85%);
+  --Pink200: hsl(357, 100%, 86%);
+
+  /* Neutral */
+  --Grey800: hsl(212, 24%, 26%);
+  --Grey500: hsl(211, 10%, 45%);
+  --Grey100: hsl(223, 19%, 93%);
+  --Grey50: hsl(228, 33%, 97%);
+  --White: hsl(0, 100%, 100%);
+
+  /* Font */
+  --fontSize: 16px;
+  --fontFamily: 'Rubik', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: var(--fontSize);
+  font-family: var(--fontFamily);
+  background-color: var(--Grey50);
+}
