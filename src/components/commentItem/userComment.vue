@@ -21,7 +21,7 @@
   <section class="container" v-if="isDesktop && !dataStore.isAddComment">
     <img :src="dataStore.userData.currentUser.image.webp" alt="userImage" class="userImageNew">
     <textarea class="replyInput" placeholder="Add a comment..." v-model="comment"></textarea>
-    <button type="button" class="replyBtn">
+    <button type="button" class="replyBtn" @click="submitComment">
       <span>SEND</span>
     </button>
   </section>
