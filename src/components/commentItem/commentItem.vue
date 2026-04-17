@@ -52,6 +52,7 @@
 
   const deleteComment = () => {
     props.parentArray.splice(props.index, 1);
+    dataStore.isAddComment = false;
   }
   const upvote = () => {
     if (vote.value === "") {
@@ -148,8 +149,8 @@
       </div>
       <div v-else-if="currentUser.username === comment.user.username && editMode">
         <button type="button" class="replyBtn" @click="updateComment">
-        <span>Update</span>
-      </button>
+          <span>Update</span>
+        </button>
       </div>
       <button type="button" class="miniBtn" v-else @click="openReplyInput">
         <img :src="reply" alt="replyIcon" class="miniIcon">

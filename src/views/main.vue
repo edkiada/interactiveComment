@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import commentItem from '../components/commentItem/commentItem.vue';
+  import UserComment from '../components/commentItem/userComment.vue';
   import { useDataStore } from '../stores/dataStore';
 
   const dataStore = useDataStore();
@@ -15,6 +16,9 @@
       :index="index"
       :parentArray="dataStore.userData.comments"
     />
+  </section>
+  <section class="mainContainer">
+    <UserComment />
   </section>
 </template>
 

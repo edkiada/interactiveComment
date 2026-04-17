@@ -11,6 +11,7 @@ export const useDataStore = defineStore('dataStore', {
     },
     isReady: false,
     IDindex: 5,
+    isAddComment: false,
   }),
   actions: {
     async fetchData() {
@@ -35,6 +36,18 @@ export const useDataStore = defineStore('dataStore', {
         replies: []
       }
       targetArray.push(newComment);
+      this.IDindex++;
+    },
+    createComment(content: string) {
+      const newComment = {
+        id: this.IDindex,
+        content: content,
+        createdAt: "Just now",
+        score: 0,
+        user: this.userData.currentUser,
+        replies: []
+      }
+      this.userData.comments.push(newComment);
       this.IDindex++;
     }
   }
